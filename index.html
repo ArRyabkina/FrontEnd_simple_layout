@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Argylova Anna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        
+                        //Создаем нужные функции
+        
+        //Это функция создания какого-либо тега в HTML 
+        var create = function(elem, par, cl, num) {
+            var element = document.createElement(elem)
+            var parent = document.querySelector(par)
+            parent.appendChild(element)
+            element.style.boxSizing = 'border-box'
+            for(var i=0; i<num; i++){
+                element.classList.add(cl[i])
+            }
+        }
+        
+                        //BODY OF WEBSITE
+        
+        document.body.style.background = '#e0e0e0'
+        
+        //создание header
+        
+        create('div', 'body', ['header', 'flex'], 2)
+        var header = document.querySelector('.header')
+        header.style.background = 'black'
+        header.style.height = '50px'
+        header.style.paddingTop = '14.5px'
+            
+            //создание элементов в header
+        
+            for(var i = 0; i<5; i++){
+                create('div', '.header', ['header-block'+i], 1)
+                var header_bl = document.querySelector('.header-block'+i)
+                header_bl.style.width = '8.047%'
+                header_bl.style.height = '40px'
+            }
+            
+                //header-иконка
+
+                create('img', '.header-block0', ['logo-img'], 1)
+                var logo_img = document.querySelector('.logo-img')
+                logo_img.src = 'logo.png'
+                logo_img.style.width = '96%'
+        
+                //работа с отталкиваниями для header-block of logo-icon
+        
+                var header_bl0 = document.querySelector('.header-block0')
+                header_bl0.style.marginRight = '6%'
+                header_bl0.style.marginLeft = '5%'
+        
+                //текст для header-bl-text
+        
+                var header_t_arr = ['news', 'store', 'heropedia']
+                
+                //header-text
+        
+                for(var i = 0; i<3; i++){
+                    create('p', '.header-block'+(i+1), ['header-text'+i], 1)
+                    var header_t = document.querySelector('.header-text'+i)
+                    header_t.style.color = '#e0e0e0'
+                    header_t.innerHTML = header_t_arr[i]
+                }
+        
+                //header-input
+        
+                create('input', '.header-block4', ['header_input'], 1)
+                var header_input = document.querySelector('.header_input')
+                header_input.style.width = '100%'
+                header_input.style.height = '40%'
+                header_input.style.borderRadius = '3.5px'
+                header_input.style.border = 'none'
+        
+        //создание main div'а
+        
+        create('div', 'body', ['main', 'flex'], 2)
+        var main = document.querySelector('.main')
+        main.style.textAlign= 'center'
+        main.style.marginBottom= '2%'
+        
+            //making blocks in the main-div
+        
+            for(var i = 0; i<2; i++){
+                create('div', '.main', ['main-block'+i], 1)
+                var main_bl = document.querySelector('.main-block'+i)
+                main_bl.style.width = '43.922%'
+                main_bl.style.margin = '2% 6%'
+            }
+        
+                //main_bl_h3-text
+        
+                var main_bl_h3_arr = ['The International Grand Champions', 'New Hero - Grimstroke']
+        
+                for(var i = 0; i<2; i++){
+                    
+                    //putting images in blocks
+                    
+                    create('img', '.main-block'+i, ['main-block-img'+i], 1)
+                    var main_bl_img = document.querySelector('.main-block-img'+i)
+                    main_bl_img.src = 'img' + (i+1) + '.png'
+                    main_bl_img.style.width = '96%'
+                    
+                    //putting h3 in blocks
+                    
+                    create('h3', '.main-block'+i, ['main-block-h3'+i], 1)
+                    var main_bl_h3 = document.querySelector('.main-block-h3'+i)
+                    main_bl_h3.innerHTML = main_bl_h3_arr[i]
+                    main_bl_h3.style.marginTop = '2%'
+                    main_bl_h3.style.marginBottom = '2%'
+                    main_bl_h3.style.fontWeight = '800'
+                    
+                    //putting p in blocks
+                    
+                    create('p', '.main-block'+i, ['main-block-p'+i], 1)
+                    var main_bl_p = document.querySelector('.main-block-p'+i)
+                    main_bl_p.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem tenetur molestias, veritatis eveniet porro, quia excepturi ad accusamus facere laudantium nihil aut. Est repellat totam, dolorum, asperiores accusantium nesciunt commodi.'
+                }
+        
+                
+        
+        //making footer
+        
+        create('div', 'body', ['footer', 'flex'], 2)
+        var footer = document.querySelector('.footer')
+        footer.style.width = '100%'
+        footer.style.height = '270px'
+        
+            //putting images there
+        
+            for(var i = 0; i<3; i++){
+                create('img', '.footer', ['footer-img'+i], 1)
+                var footer_img = document.querySelector('.footer-img'+i)
+                footer_img.src = (i+1) + '.jpg'
+                footer_img.style.width = '30.127524%'
+                footer_img.style.margin = '0 1.602905%'
+            }
+        
+                        //BIT MORE CLASSES
+        
+        //Plus one class
+        
+        var flex = document.querySelectorAll('.flex')
+        for(var i = 0; i<2; i++){
+            flex[i].style.display = 'flex'
+        }
+        
+        
+    </script>
+</body>
+</html>
